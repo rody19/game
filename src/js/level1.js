@@ -6,6 +6,7 @@ import { background } from './background'
 import { Runner } from './runner'
 import { Piranha } from './piranha'
 import { Label, FontUnit, Font } from "excalibur";
+import { Health } from "./health";
 
 
 export class Level1 extends Scene {
@@ -16,6 +17,7 @@ export class Level1 extends Scene {
     piranha = []
     runner
     timer
+    health
 
     constructor(dataclass) {
         super({})
@@ -49,17 +51,13 @@ export class Level1 extends Scene {
         this.add(this.label)
 
         const bg = new background()
-        // this.runner = new Runner()
-        // this.piranha[0] = new Piranha()
-        // this.piranha[1] = new Piranha()
-        // this.piranha[2] = new Piranha()
-
-        //voegt het nu toe   
+        
         this.add(bg)
-        // this.add(this.runner)
-        // this.add(this.piranha[0])
-        // this.add(this.piranha[1])
-        // this.add(this.piranha[2])
+        
+
+
+        this.health = new Health()
+        this.add(this.health) 
     }
 
     onActivate() {

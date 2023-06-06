@@ -1,8 +1,10 @@
 export class DataClass {
+// je eigen class geschreven
+
 
     score
     restart = false
-
+    
     getScore() {
         return this.score
     }

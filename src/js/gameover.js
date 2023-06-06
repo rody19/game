@@ -1,6 +1,7 @@
-import { Scene, ScreenElement, Label, Vector, Font } from 'excalibur'
+import { Scene, Label, Vector, Font } from 'excalibur'
 import { Resources } from './resources'
 import { Button } from './Button'
+
 
 export class Gameover extends Scene {
 

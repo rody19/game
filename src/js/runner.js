@@ -12,7 +12,7 @@ export class Runner extends Actor {
     }
 
     onInitialize(engine) {
-
+//engine = en actor lifecycle
         
 
         this.graphics.use(Resources.runner.toSprite())
@@ -22,21 +22,18 @@ export class Runner extends Actor {
 
         this.on('collisionstart', (event) =>{
             if(event.other._name == 'piranha') {
-                console.log(event)
-                engine.goToScene('gameover')
+                // console.log(event)
+                engine.currentScene.health.onHit()
+                
+                // controleer of health in de current scene zit
+                if (typeof engine.currentScene.health !== 'undefined' &&
+                    engine.currentScene.health.healthAmount == 0) {
+                    engine.goToScene('gameover')
+                }
+
+
             }
         })
-
-        // this.on('collisionstart', (event) => this.hitSomething(event))
-
-        // hitSomething(event) {
-        //     if (event.other instanceof Runner) {
-        //     event.other.doodgaatding()
-        //     this.enginegoToScene('gameover')
-        //     }
-        //     }
-       
-
 
     }
 
